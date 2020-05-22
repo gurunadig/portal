@@ -4,6 +4,28 @@
 
 {% block content %}
 
+
+
+    <div class="container">
+      <div class="row landdiv d-flex align-items-end">
+        <div class="col-sm-12 col-md-3 col-lg-3 ">
+
+          {% if request.user.is_authenticated %}
+            <p><a href="{% url 'home' %}"> Home</a>| <a href="{% url 'logout' %}"> Logout</a> </p>
+            <p>Hello, {{request.userusername}}</p>
+          {% else %}
+            <p>
+              <a href="{% url 'home' %}"> Home</a>
+              <a href="{% url 'register' %}"> Register</a>
+              <a href="{% url 'login' %}">Login</a></p>
+          {% endif %}
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- the landingpage ________________________________________________starts here__________________________ -->
 
   {% comment %} <div id="landrbg">
