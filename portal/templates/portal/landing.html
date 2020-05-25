@@ -7,7 +7,7 @@
 
 
     <div class="container">
-      <div class="row landdiv d-flex align-items-end">
+      <div class="row landdiv">
         <div class="col-sm-12 col-md-3 col-lg-3 ">
 
           {% if request.user.is_authenticated %}
@@ -26,39 +26,18 @@
     </div>
   </div>
 
-  <!-- the landingpage ________________________________________________starts here__________________________ -->
 
-  {% comment %} <div id="landrbg">
+  {% include 'portal/joblist.html' %}
 
-    <div class="container">
-      <div class="row landdiv d-flex align-items-end">
-
-        <div class="col-sm-12 col-md-3 col-lg-3 ">
-
-          <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            if the printing and typesetting industry. 
-           </h4>
-           <button type="button" class="btn btn-primary">Find Jobs</button>
-
-        </div>
-
-        <div class="col-sm-12 col-md-9 col-lg-9">
-
-
-        </div>
-        
-
-      </div>
-
-    </div>
-  </div>
-     {% endcomment %}
+{% comment %} 
+  {% include 'portal/profile.html' %} {% endcomment %}
 
 
 
-  <!-- the landingpage ________________________________________________ ends here__________________________ -->
 
-  
+
+
+
 
 
 

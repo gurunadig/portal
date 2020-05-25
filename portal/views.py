@@ -2,12 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate, logout
 from portal.forms import RegistrationForm, AccountAuthenticationForm 
-from .models import *
-
-
-def home(request):
-    return render(request, 'portal/landing.html')
-
+from .models import Job, Profile
 
 
 def registration_view(request):
@@ -62,3 +57,29 @@ def login_view(request):
 
 	# print(form)
 	return render(request, "portal/login.html", context)
+
+
+def home(request):
+    jobs = Job.objects.all()
+    profile = Profile.objects.all()
+    context = {'jobs':jobs, 'profile':profile}
+
+    return render(request, 'portal/landing.html', context)
+
+def profile(request):
+    profile = Profile.objects.all()
+    context = {'profile': profile}
+    return render(request, 'portal/profile.html', context)
+
+
+def joblistview(request):
+    job = Jobs.objects.get(id=pk)
+    context = {'job': job}
+    return render(request, 'portal/jobslist.html')
+
+
+
+# def jobdetailview(request, pk):
+#     job = Jobs.objects.get(id=pk)
+#     context = {'job': job}
+#     return render(request, 'portal/jobslist.html')

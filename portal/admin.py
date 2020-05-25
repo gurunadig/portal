@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from portal.models import Account
+from portal.models import Account, Profile, Job
 
 class AccountAdmin(UserAdmin):
 	list_display = ('email','username','date_joined', 'last_login', 'is_admin','is_staff')
@@ -13,4 +13,5 @@ class AccountAdmin(UserAdmin):
 
 
 admin.site.register(Account, AccountAdmin)
-
+admin.site.register(Profile)
+admin.site.register(Job)
