@@ -72,10 +72,10 @@ def profile(request):
     return render(request, 'portal/profile.html', context)
 
 
-def joblistview(request):
-    job = Jobs.objects.get(id=pk)
+def joblist(request, pk_test ):
+    job = Job.objects.get(id=pk_test)
     context = {'job': job}
-    return render(request, 'portal/jobslist.html')
+    return render(request, 'portal/joblist.html', context)
 
 
 
